@@ -208,6 +208,27 @@ body {
 .icon-btn.active svg { filter: drop-shadow(0 0 5px var(--cyan)); }
 .logout-btn:hover { color: var(--red); background: var(--red-dim); box-shadow: 0 0 15px var(--red-dim); }
 
+/* Custom FUI Tooltips */
+.icon-btn { position: relative; }
+.icon-btn[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  left: 100%; top: 50%;
+  transform: translateY(-50%);
+  margin-left: 10px;
+  background: rgba(0,0,0,0.9);
+  color: var(--cyan);
+  border: 1px solid var(--cyan-mid);
+  padding: 4px 8px;
+  font-family: var(--font-data);
+  font-size: 0.75rem;
+  white-space: nowrap;
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--cyan-dim);
+  z-index: 100;
+  pointer-events: none;
+}
+
 /* 2. Central Live Feed */
 .main-feed {
   grid-area: main;
